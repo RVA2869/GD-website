@@ -35,6 +35,7 @@ WHERE {
 		MINUS { ?org wdt:P31 wd:Q5532360 }
         MINUS { ?org wdt:P1001 wd:Q1156248 }
         MINUS { ?org p:P1001 ?js. ?js pq:P582 [] }
+        MINUS { ?org wdt:P571 ?date . FILTER (DATATYPE(?date) = xsd:dateTime && ?date > now()) }
 	}
 	UNION
 	{ # Scottish courts (56)

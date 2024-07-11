@@ -24,6 +24,7 @@ WHERE {
   MINUS { ?org wdt:P31 wd:Q19953632 }
   MINUS { ?org wdt:P31 wd:Q15893266 }
   MINUS { ?org p:P31 ?p. ?p pq:P582 [] }
+  MINUS { ?org wdt:P571 ?date . FILTER (DATATYPE(?date) = xsd:dateTime && ?date > now()) }
 
   BIND(REPLACE(STR(?org), "http://www.wikidata.org/entity/", "") AS ?qid)
 
